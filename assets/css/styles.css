@@ -155,13 +155,11 @@ main {
   z-index: 9999;
 }
 
-/ Show warning on small screens /
 @media (max-width: 900px) {
   #mobile-warning {
     display: block;
   }
-
-  / Hide everything else when warning is visible /
+  
   body >:not(#mobile-warning) {
     display: none !important;
   }
