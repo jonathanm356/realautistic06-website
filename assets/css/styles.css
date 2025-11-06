@@ -139,38 +139,3 @@ main {
     padding-left: 40px;
 }
 
-.menu-btn {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 24px;
-  background: #111;
-  color: #00aaff;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 1001;
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .menu-btn {
-    display: block;
-  }
-
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    background: #000;
-    z-index: 1000;
-  }
-
-  body.menu-open .sidebar {
-    transform: translateX(0);
-  }
-}
