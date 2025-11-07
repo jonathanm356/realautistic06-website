@@ -210,3 +210,14 @@ main {
     font-size: 14px;
     border-top: 1px solid #00aaff;
 }
+
+body {
+    background: linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100%);
+    background-image:
+        url("assets/online-data-protection-shield-abstract-with-computer-technology_29971-309.png-removebg-preview"),
+        linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100%);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 740px 523px, cover;
+    background-blend-mode: overlay;
+}
