@@ -203,7 +203,7 @@ main {
 }
 
 .footer {
-    background: linear-gradient(to right #000000 #0a0a0f #000000);
+    background: linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100%);
     color: #00aaff;
     text-align: center;
     padding: 20px 0;
