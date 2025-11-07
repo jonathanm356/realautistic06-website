@@ -212,9 +212,11 @@ main {
 }
 
 body {
-  background:
-    url("../img/tech.png") no-repeat bottom right,
-    linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100%);
-  background-size: 740px 523px, cover;
-  background-blend-mode: soft-light;
+    background:
+    linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100% )
+        url("../img/tech.png"),
+        linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100%);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 740px 523px, cover;
 }
