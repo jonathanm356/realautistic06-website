@@ -8,19 +8,6 @@
     </head>
 
     <body>
-        <header class="site-header">
-  <button class="hamburger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="brand">RealAutistic06</div>
-</header>
-
-<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="books.html">My Books</a>
-  <a href="contact.html">Contact</a>
-</nav>
      <aside class="sidebar">
         <h2>RealAutistic06</h2>
         <nav>
@@ -72,6 +59,25 @@
     if(e.key === 'Escape' && btn.classList.contains('open')) toggleMenu();
   });
 </script>
-<script src="js/main.js"></script>
+<nav class="navbar">
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<footer>
+ <p>© <span id="year"></span> RealAutistic06. All Rights Reserved.</p>
+  <p>Built by Jonathan | Author & Developer</p>
+</footer>
+
+<script src="main.js"></script>
     </body>
 </html>
