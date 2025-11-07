@@ -216,5 +216,5 @@ body {
     linear-gradient(rgba (0, 0, 0, 0.6), rgba (0, 0, 0, 0.6)),
     url("../img/tech.png") center center/cover no-repeat;
     color: #ffffff;
-    background-position: fixed;
+    background-attachment: fixed;
 }
