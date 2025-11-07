@@ -210,11 +210,3 @@ main {
     font-size: 14px;
     border-top: 1px solid #00aaff;
 }
-
-body {
-    background:
-    linear-gradient(rgba (0, 0, 0, 0.6), rgba (0, 0, 0, 0.6)),
-    url("../img/tech.png") center center/cover no-repeat;
-    color: #ffffff;
-    background-attachment: fixed;
-}
