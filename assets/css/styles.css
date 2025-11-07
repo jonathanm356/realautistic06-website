@@ -139,56 +139,6 @@ main {
     padding-left: 40px;
 }
 
-#mobile-warning{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#000;
-  color:#00aaff;
-  font-family: Arial, sans-serif;
-  font-size:18px;
-  line-height:1.6;
-  text-align:center;
-  padding:28px;
-  z-index:2147483647;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-}
-
-#mobile-warning {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #000;
-  color: #00aaff;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  text-align: center;
-  padding: 28px;
-  z-index: 2147483647;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-@media (hover: none) and (pointer: coarse),
-       (max-width: 1024px),
-       (-webkit-touch-callout: none) {
-  #mobile-warning {
-    display: flex;
-  }
-  html, body {
-    height: 100%;
-    overflow: hidden !important;
-  }
-  body >:not(#mobile-warning) {
-    display: none !important;
-  }
-}
-
 .footer {
   text-align: center;
   padding: 15px 10px;
