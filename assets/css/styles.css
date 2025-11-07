@@ -210,3 +210,20 @@ main {
     font-size: 14px;
     border-top: 1px solid #00aaff;
 }
+
+.glow-link {
+  color: #fff;
+  background: #00aaff;
+  border: 1px solid #00aaff;
+  border-radius: 6px;
+  padding: 8px 14px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 12px #00aaff, 0 0 24px #00aaff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #00aaff, 0 0 36px #00aaff;
+}
