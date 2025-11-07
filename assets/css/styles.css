@@ -212,9 +212,9 @@ main {
 }
 
 body {
-    background-image:
-        url("../img/tech.png"),
-        linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100%);
+    background:
+    linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100% ),
+        url("../img/tech.png") no-repeat bottom right;
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: 740px 523px, cover;
