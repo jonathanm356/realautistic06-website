@@ -212,11 +212,9 @@ main {
 }
 
 body {
-    background-image:
-        url("../img/tech.png"),
-        linear-gradient(90deg, #0a0a0a 0%, #101820 40%, #0a0a0a 100%);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-attachment: fixed;
+    background:
+    linear-gradient(rgba (0, 0, 0, 0.6), rgba (0, 0, 0, 0.6)),
+    url("../img/tech.png") center center/cover no-repeat;
+    color: #ffffff;
+    background-position: fixed;
 }
