@@ -179,3 +179,7 @@ main {
   color: #fff;
   transform: translateY(-1px);
 }
+
+body {
+    padding-bottom: 60px; /* To ensure content is not hidden behind the footer */
+}
