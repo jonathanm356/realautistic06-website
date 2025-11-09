@@ -1,3 +1,4 @@
+document.documentElement.classList.remove('no-js');
 document.getElementById('year').textContent = new Date().getFullYear();
 
 document.querySelectorAll('.nav-list a').forEach(a =>
