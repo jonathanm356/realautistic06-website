@@ -183,3 +183,9 @@ main {
 body {
     padding-bottom: 60px; /* To ensure content is not hidden behind the footer */
 }
+
+main {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
