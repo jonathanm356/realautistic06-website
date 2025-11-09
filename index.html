@@ -8,20 +8,25 @@
     </head>
 
     <body>
-     <aside class="sidebar">
-        <h2>RealAutistic06</h2>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="books.html">My Books</a></li>
-                <li><a href="limited-bundles.html">Limited Bundles</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-     </aside> 
-      <main>
-        <div class="page-title">Home Page</div>
+     <nav class="navbar">
+  <div id="menu-toggle" class="menu-toggle">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </div>
+  <div id="brand" class="brand">RealAutistic06</div>
+</nav>
+
+<aside id="side-menu" class="side-menu">
+  <ul class="nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="books.html">My Books</a></li>
+    <li><a href="limited-bundles.html">Limited Bundles</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</aside>
+        <main id="content">
+            <h2 class="page-label">Home Page</h2>
+
         <section class="intro">
             <h2>Welcome to my world!</h2>
             <p>Hey, I’m Jonathan — also known as RealAutistic06. I’m an autistic author and future web developer from Scotland who’s passionate about creativity, technology, and storytelling. This website is my little corner of the internet where I share my work, ideas, and journey toward becoming a developer.</p>
@@ -39,7 +44,12 @@
   <p>© <span id="year"></span> RealAutistic06. All Rights Reserved.</p>
   <p>Built by Jonathan | Author & Developer</p>
 </footer>
-
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+  });
+</script>
 <script src="js/main.js"></script>
     </body>
 </html>

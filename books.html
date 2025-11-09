@@ -15,20 +15,18 @@
   <div class="brand">RealAutistic06</div>
 </header>
 
-     <aside class="sidebar">
-        <h2>RealAutistic06</h2>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="books.html">My Books</a></li>
-                <li><a href="limited-bundles.html">Limited Bundles</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-     </aside> 
-      <main>
-        <div class="page-title">My Books</div>
+    <aside id="side-menu" class="side-menu">
+  <ul class="nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="books.html">My Books</a></li>
+    <li><a href="limited-bundles.html">Limited Bundles</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</aside>
+        <main id="content">
+            <h2 class="page-label">Home Page</h2>
+
         <section class="intro">
             <h2>Current Books</h2>
             <h3>"The Boy Who Felt Too Much"</h3>
@@ -64,7 +62,12 @@
   <p>© <span id="year"></span> RealAutistic06. All Rights Reserved.</p>
   <p>Built by Jonathan | Author & Developer</p>
 </footer>
-
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+  });
+</script>
 <script src="js/main.js"></script>
 <script>
 document.querySelectorAll('a[href*="amazon"]').forEach(a => a.classList.add('glow-link'));
