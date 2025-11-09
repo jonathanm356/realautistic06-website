@@ -275,7 +275,7 @@ body.menu-open .brand {
 
 body.menu-open .page-label,
 body.menu-open #content {
-  transform: translateX(220px);
+  transform: translateX(0px);
 }
 
 .no-js .side-menu { transform: translateX(0); }
