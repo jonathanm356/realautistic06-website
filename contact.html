@@ -35,7 +35,16 @@
 
             <form action="https://formspree.io/f/mwpaedol" method="post" class="contact-form">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required pattern="A-Za-z\s]+" title="Please enter letters only" />
+                <input
+  type="text"
+  id="name"
+  name="name"
+  required
+  autocomplete="name"
+  inputmode="text"
+  pattern="^[A-Za-zÀ-ÿ\s'-]{2,40}$"
+  title="Letters only (you can use spaces, ' and -). 2–40 characters."
+/>
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required />
