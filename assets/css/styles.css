@@ -280,3 +280,9 @@ body.menu-open #content {
 
 .no-js .side-menu { transform: translateX(0); }
 .no-js .brand { opacity: 1; }
+
+.glow-link {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
