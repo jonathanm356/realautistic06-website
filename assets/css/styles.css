@@ -379,3 +379,7 @@ section .panel { max-height: 0; overflow: hidden; transition: max-height .25s ea
   section .panel { transition: none; }
   .collapser::after { transition: none; }
 }
+
+body.books-page #content p + p {
+  margin-top: 1rem;
+}
