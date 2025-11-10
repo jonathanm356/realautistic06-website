@@ -68,6 +68,33 @@ form.addEventListener("submit", function(e) {
   });
 });
 </script>
+
+<script>
+(function () {
+  const f = document.getElementById('contact-form');
+  if (!f) return;
+
+  const nameEl = document.getElementById('name');
+
+  f.addEventListener('submit', function (e) {
+    const ok = /^[A-Za-zÀ-ÿ\s'-]{2,40}$/.test(nameEl.value.trim());
+    if (!ok) {
+      e.preventDefault();
+      nameEl.setCustomValidity("Letters only (you can use spaces, ' and -). 2–40 characters.");
+      nameEl.reportValidity();
+      nameEl.focus();
+    } else {
+      nameEl.setCustomValidity('');
+    }
+  });
+
+  nameEl.addEventListener('input', function () {
+    this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s'-]/g, '');
+    this.setCustomValidity('');
+  });
+})();
+</script>
+
 <script src="js/main.js" defer></script>
     </body>
 </html>
