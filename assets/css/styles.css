@@ -381,5 +381,9 @@ section .panel { max-height: 0; overflow: hidden; transition: max-height .25s ea
 }
 
 #content p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#content h3 {
+  margin-top: 2rem;
 }
