@@ -37,34 +37,47 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-(function () {
-  if (!/books.html$/i.test(location.pathname)) return;
-  var sections = document.querySelectorAll('#content section');
-  sections.forEach(function (sec) {
-    var heading = sec.querySelector('h2');
-    if (!heading) return;
-    heading.classList.add('collapser');
-    heading.setAttribute('role', 'button');
-    heading.setAttribute('tabindex', '0');
-    heading.setAttribute('aria-expanded', 'false');
-    var panel = document.createElement('div');
-    panel.className = 'panel';
-    while (heading.nextSibling) panel.appendChild(heading.nextSibling);
-    sec.appendChild(panel);
-    function setOpen(open) {
-      sec.classList.toggle('is-open', open);
-      heading.setAttribute('aria-expanded', String(open));
-      panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0';
-    }
-    function toggle() { setOpen(!sec.classList.contains('is-open')); }
-    heading.addEventListener('click', toggle);
-    heading.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    var path = location.pathname.toLowerCase();
+    if (!path.endsWith('/books.html') && !path.endsWith('books.html')) return;
+
+    var sections = document.querySelectorAll('#content section');
+    sections.forEach(function (sec) {
+      var h2 = sec.querySelector('h2');
+      if (!h2) return;
+
+      // build panel
+      var panel = document.createElement('div');
+      panel.className = 'panel';
+      while (h2.nextSibling) panel.appendChild(h2.nextSibling);
+      sec.appendChild(panel);
+
+      // a11y + UI
+      h2.classList.add('collapser');
+      h2.setAttribute('role', 'button');
+      h2.setAttribute('tabindex', '0');
+      h2.setAttribute('aria-expanded', 'false');
+
+      function setOpen(open) {
+        sec.classList.toggle('is-open', open);
+        h2.setAttribute('aria-expanded', String(open));
+        panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0';
+      }
+      function toggle() { setOpen(!sec.classList.contains('is-open')); }
+
+      h2.addEventListener('click', toggle);
+      h2.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
     });
-  });
-  window.addEventListener('resize', function () {
-    document.querySelectorAll('section.is-open .panel').forEach(function (p) {
-      p.style.maxHeight = p.scrollHeight + 'px';
+
+    window.addEventListener('resize', function () {
+      document.querySelectorAll('section.is-open .panel').forEach(function (p) {
+        p.style.maxHeight = p.scrollHeight + 'px';
+      });
     });
-  });
-})();
+  } catch (e) {
+    console.error('Collapse init failed:', e);
+  }
+});
