@@ -2,30 +2,24 @@
 document.documentElement.classList.remove('no-js');
 document.getElementById('year').textContent = new Date().getFullYear();
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.add('is-ready');
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.style.opacity = 0;
+  document.body.style.transition = 'opacity 0.5s ease';
+  requestAnimationFrame(function () {
+    document.body.style.opacity = 1;
+  });
 
-  document.querySelectorAll('a[href]').forEach(a => {
-    try{
-      const url = new URL(a.getAttribute('href'), location.href);
-
-      const sameOrigin = url.origin === location.origin;
-      const samePage   = url.pathname === location.pathname && url.hash === '';
-      const newTab     = a.target && a.target !== '_self';
-      const download   = a.hasAttribute('download');
-
-      if (!sameOrigin  samePage  newTab  download) return;
-
-      a.addEventListener('click', e => {
-        if (e.metaKey  e.ctrlKey  e.shiftKey  e.altKey) return; // let modifiers open new tabs
+  var links = document.querySelectorAll('a[href]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function (e) {
+      var href = this.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith('#')) {
         e.preventDefault();
-        document.body.classList.add('is-fading');
-        setTimeout(() => { window.location.href = url.href; }, 250);
-      });
-    } catch {}
-  });
-
-  window.addEventListener('pageshow', () => {
-    document.body.classList.remove('is-fading');
-  });
+        document.body.style.opacity = 0;
+        setTimeout(function () {
+          window.location.href = href;
+        }, 500);
+      }
+    });
+  }
 });
