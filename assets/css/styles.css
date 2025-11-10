@@ -336,3 +336,9 @@ form button:hover {
   background-color: #0077ff;
   color: #fff;
 }
+
+@media (prefers-reduced-motion: no-preference){
+  body{ opacity:1; transition: opacity .25s ease }
+  body.is-fading{ opacity:0 }           /* fade-out before leaving /
+  body:not(.is-ready){ opacity:0 }      / fade-in on first paint */
+}
