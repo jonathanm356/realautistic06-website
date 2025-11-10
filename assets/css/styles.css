@@ -352,3 +352,21 @@ body:not(.is-ready) {
     transition: none; 
   }
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
