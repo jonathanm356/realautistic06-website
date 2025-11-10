@@ -51,8 +51,21 @@
   <p>Built by Jonathan | Author & Developer</p>
 </footer>
 <script>
-  const form = document.queryselector("form");
-  form.AddEventListener("submit", () => form.reset());
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(() => {
+    form.reset();
+    alert("✅ Message sent successfully!");
+  }).catch(() => {
+    alert("❌ Something went wrong. Please try again.");
+  });
+});
 </script>
 <script src="js/main.js" defer></script>
     </body>
