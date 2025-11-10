@@ -3,23 +3,18 @@ document.documentElement.classList.remove('no-js');
 document.getElementById('year').textContent = new Date().getFullYear();
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.body.style.opacity = 0;
-  document.body.style.transition = 'opacity 0.5s ease';
-  requestAnimationFrame(function () {
-    document.body.style.opacity = 1;
-  });
-
+  document.body.classList.add('is-ready');
   var links = document.querySelectorAll('a[href]');
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function (e) {
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
       var href = this.getAttribute('href');
-      if (href && !href.startsWith('http') && !href.startsWith('#')) {
+      if (href && !href.startsWith('http') && !href.startsWith('#') && this.target !== '_blank') {
         e.preventDefault();
-        document.body.style.opacity = 0;
+        document.body.classList.add('is-fading');
         setTimeout(function () {
           window.location.href = href;
-        }, 500);
+        }, 250);
       }
     });
-  }
+  });
 });
