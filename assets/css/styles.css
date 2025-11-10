@@ -370,3 +370,12 @@ main {
 footer {
   margin-top: auto;
 }
+
+.collapser { cursor: pointer; position: relative; }
+.collapser::after { content: "▸"; margin-left: .5rem; transition: transform .2s ease; }
+section.is-open .collapser::after { transform: rotate(90deg); }
+section .panel { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+@media (prefers-reduced-motion: reduce) {
+  section .panel { transition: none; }
+  .collapser::after { transition: none; }
+}
