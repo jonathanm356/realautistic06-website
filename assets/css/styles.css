@@ -336,3 +336,18 @@ form button:hover {
   background-color: #0077ff;
   color: #fff;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  body.is-ready {
+    opacity: 1;
+  }
+
+  body.is-fading {
+    opacity: 0;
+  }
+}
