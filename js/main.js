@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!/books.html$/i.test(location.pathname)) return;
   var sections = document.querySelectorAll('#content section');
   sections.forEach(function (sec) {
-    var heading = sec.querySelector('h2, h3');
+    var heading = sec.querySelector('h2');
     if (!heading) return;
     heading.classList.add('collapser');
     heading.setAttribute('role', 'button');
